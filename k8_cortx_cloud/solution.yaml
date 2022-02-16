@@ -10,6 +10,7 @@ solution:
       s3_auth_admin_secret: ldapadmin
       csm_auth_admin_secret: seagate2
       csm_mgmt_admin_secret: Cortxadmin@123
+      s3_default_iam_secret_key: cortx_default_secret
   images:
     cortxcontrol: ghcr.io/seagate/cortx-all:2.0.0-632-custom-ci
     cortxdata: ghcr.io/seagate/cortx-all:2.0.0-632-custom-ci
