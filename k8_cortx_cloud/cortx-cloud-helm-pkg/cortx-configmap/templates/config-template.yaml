@@ -49,13 +49,21 @@ cortx:
       - http://<<.Values.cortx.io.svc>>:28049
     auth_secret: s3_auth_admin_secret
   rgw:
-    s3:
+    auth_user: user_name                      #Hard-coded for now, will be replaced by CORTX-28022
+    auth_admin: sgiamadmin                    #Hard-coded for now, will be replaced by CORTX-28022
+    auth_secret: s3_default_iam_secret_key    #Hard-coded for now, will be replaced by CORTX-28022
+    data:
       endpoints:
       - http://<<.Values.cortx.io.svc>>:80
       - https://<<.Values.cortx.io.svc>>:443
+    internal:
+      endpoints:
+      - http://cortx-io-svc:28049
+    service_instances: 1
     io_max_units: 8
     max_start_timeout: <<.Values.cortx.max_start_timeout>>
     limits:
+      num_services: 1
       services:
       - name: rgw
         memory:
